@@ -32,6 +32,8 @@ public class congruent {
         double t2_side2 = Math.hypot(t2_x1 - t2_x3, t2_y1 - t2_y3);
         double t2_side3 = Math.hypot(t2_x2 - t2_x3, t2_y2 - t2_y3);
 
+        scan.close(); 
+        
         if (t1_side1 == t2_side1) {
             if (t1_side2 == t2_side2) {
                 if (t1_side3 == t2_side3){

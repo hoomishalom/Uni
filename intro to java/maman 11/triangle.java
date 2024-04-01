@@ -12,6 +12,8 @@ public static void main (String [] args)
     int sideB = scan.nextInt();
     int sideC = scan.nextInt();
 
+    scan.close();
+    
     // checking if sides are valid
     if (!(sideA + sideB > sideC && sideA + sideC > sideB && sideB + sideC > sideA)) {
         System.out.println("The given three sides don't represent a triangle");
