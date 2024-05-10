@@ -12,7 +12,7 @@ public class Point3D {
 
     //constructors:
     /**
-     * creates a new Point3D objects and initializes _x,_y,_z to DEFAULT_VALUE
+     * Constructs and initializes a Point3D to (0,0,0).
      */
     public Point3D() {
         _x = DEFAULT_VALUE;
@@ -21,10 +21,10 @@ public class Point3D {
     }
 
     /**
-     * creates a new Point3D object
-     * @param x the initial _x value
-     * @param y the initial _y value
-     * @param z the initial _z value
+     * Constructs and initializes a Point3D from the specified xyz coordinates.
+     * @param x the x coordinate
+     * @param y the y coordinate
+     * @param z the z coordinate
      */
     public Point3D(double x, double y, double z) {
         _x = x;
@@ -33,8 +33,8 @@ public class Point3D {
     }
 
     /**
-     * copy constructor
-     * @param other Point3D object to be copied
+     * Constructs and initializes a Point3D from the specified Point3D.
+     * @param other which the new instance initialization will be based on
      */
     public Point3D(Point3D other) {
         _x = other._x;
@@ -42,127 +42,132 @@ public class Point3D {
         _z = other._z;
     }
 
-    /** gets _x */
+    /**  
+     * returns the x coordinate
+     * @return the value of the x coordinate
+    */
     public double getX() {
         return _x;
     }
 
-    /** gets _y */
+    /**  
+     * returns the y coordinate
+     * @return the value of the y coordinate
+    */
     public double getY() {
         return _y;
     }
 
-    /** gets _z */
+    /** 
+     * returns the z coordinate
+     * @return the value of the z coordinate
+    */
     public double getZ() {
         return _z;
     }
 
     /**
-     * sets _x
-     * @param num new _x value
+     * sets the x coordinate to the given x
+     * @param num the x value to set
      */
     public void setX(double num) {
         _x = num;
     }
 
-        /**
-     * sets _y
-     * @param num new _y value
+    /**
+     * sets the y coordinate to the given y
+     * @param num the y value to set
      */
     public void setY(double num) {
         _y = num;
     }
 
-        /**
-     * sets _z
-     * @param num new _z value
+    /**
+     * sets the z coordinate to the given z
+     * @param num the z value to set
      */
     public void setZ(double num) {
         _z = num;
     }
 
     /**
-     * @return String that represents the location of the point
-     * in the following format: (x,y,z)
+     * Returns a string representation of this Point3D.
+     * @return a string representation of this point and its location in the (x,y,z) coordinate space.
      */
+    @Override
     public String toString() {
         return "(" + _x + "," + _y + "," + _z + ")";
     }
 
     /**
-     * checks if two points are equal based on their _x,_y,_z values
-     * @param other the other point check with
-     * @return true if both points are equal else otherwise
+     * Determines whether or not two points are equal.
+     * @param other a Point3D object to be compared with this Point3D
+     * @return true if the two Point3D objects are equal (containing the same x, y, and z values), false otherwise.
      */
     public boolean equals(Point3D other) {
-        return (_x == other._x && _y == other._y && _z == other._z);
+        return (_x == other._x && _y == other._y && _z == other._z);    // returns true if _x,_y,_z are equal to other._x, other._y, other._z respectively, false otherwise 
     }
 
     /**
-     * checks which point is higher
-     * @param other the point to compare to
-     * @return true if the _z value of the point which the function was called
-     * from is higher than the point which "other" represents and thus higher false otherwise
+     * Checks if this point is above the other point.
+     * @param other The point to check whether this point is above it
+     * @return true if this point is above the other point, false otherwise
      */
     public boolean isAbove(Point3D other) {
-        return (_z > other._z);
+        return (_z > other._z);     // checks if _z > other._z and returns the result
     }
 
     /**
-     * checks which point is lower
-     * @param other the point to compare to
-     * @return true if the _z value of the point which the function was called
-     * from is lower than the point which "other" represents thus lower false otherwise
+     * Checks if this point is under the other point.
+     * @param other The point to check whether this point is under i
+     * @return true if this point is under the other point, false otherwise
      */
     public boolean isUnder(Point3D other) {
         return other.isAbove(this);
     }
 
     /**
-     * checks which point is more left
-     * @param other the point to compare to
-     * @return true if the _y value of the point which the function was called
-     * from is lower than the point which "other" represents and thus more left false otherwise
+     * Checks if this point is to the left of the other point.
+     * @param other The point to check whether this point is left of it
+     * @return true if this point is to the left of the other point, false otherwise
      */
     public boolean isLeft(Point3D other) {
-        return (_y < other._y);
+        return (_y < other._y);     // checks if _y < other._y and returns the result
     }
 
     /**
-     * checks which point is more right
-     * @param other the point to compare to
-     * @return true if the _y value of the point which the function was called
-     * from is higher than the point which "other" represents and thus more right false otherwise
+     * Checks if this point is to the right of the other point.
+     * @param other The point to check whether this point is right of it
+     * @return true if this point is to the right of the other point, false otherwise
      */
     public boolean isRight(Point3D other) {
         return other.isLeft(this);
     }
 
     /**
-     * checks which point is behind
-     * @param other the point to compare to
-     * @return true if the _x value of the point which the function was called
-     * from is lower than the point which "other" represents and thus behind false otherwise
+     * Checks if this point is behind the other point.
+     * @param other The point to check whether this point behind it
+     * @return true if this point is behind the other point, false otherwise
      */
     public boolean isBehind(Point3D other) {
-        return (_x < other._x);
+        return (_x < other._x);         // checks if _x < other._x and returns the result
     }
 
     /**
-     * checks which point is in front
-     * @param other the point to compare to
-     * @return true if the _x value of the point which the function was called
-     * from is higher than the point which "other" represents and thus in front false otherwise
+     * Checks if this point is in front of the other point.
+     * @param other The point to check if this point is in front of it
+     * @return true if this point is in front of the other point, false otherwise
      */
     public boolean isInFrontOf(Point3D other) {
         return other.isBehind(this);
     }
 
     /**
-     * changes the _x,_y,_z value of the point by dx,dy,dz respectively
-     * @param dx change in _x
-     * @param dy change in _y
-     * @param dz change in _z
+     * Moves the Point3D in location (x,y,z), by dx along the x axis, by dy along the y axis and dz along the z axis 
+     * so that it now represents the Point3D in the following 3D coordintes (x+dx,y+dy,z+dz).
+     * @param dx the addtion for coordinate x value
+     * @param dy the addtion for coordinate y vlaue
+     * @param dz the addtion for coordinate z value
      */
     public void move(double dx, double dy, double dz) {
         _x += dx;
@@ -171,14 +176,14 @@ public class Point3D {
     }
 
     /**
-     * calculates the distance between two points
-     * @param p other point to calculate distance between
-     * @return distance between the two points
+     * Returns the distance between this point and other point p.
+     * @param p the other point
+     * @return returns the distance
      */
     public double distance(Point3D p) {
         double distance;
         
-        distance = Math.sqrt(Math.pow((_x - p._x), 2) + Math.pow((_y - p._y), 2) + Math.pow((_z - p._z), 2));
+        distance = Math.sqrt(Math.pow((_x - p._x), 2) + Math.pow((_y - p._y), 2) + Math.pow((_z - p._z), 2));   // equation to calculate distance between two points
         
         return distance;
     }
