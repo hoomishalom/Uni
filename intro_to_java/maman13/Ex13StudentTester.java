@@ -23,20 +23,20 @@ public class Ex13StudentTester
         // System.out.println("getPassword returns: "+getPassword);
         // System.out.println("findPassword returns: "+findPassword);
         // System.out.println();
-        // System.out.println("********** Question 4**********\n");
-        // System.out.println();
-        // boolean[][] mat = {
-        //         {false,false,false,false,true},
-        //         {false,true,true,true,false},
-        //         {false,false,true,true,false},
-        //         {true,false,false,false,false},
-        //         {true,true,false,false,false},
-        //     };
-        // System.out.println ("Checking method cntTrueReg with the matrix:\n");
-        // printMat (mat);
-        // int studentCntRegResult=Ex13.cntTrueReg(mat);
-        // System.out.println();
-        // System.out.println("Result is: "+studentCntRegResult);
+        System.out.println("********** Question 4**********\n");
+        System.out.println();
+        boolean[][] mat = {
+                {false,false,false,false,true},
+                {false,true,true,true,false},
+                {false,false,true,true,false},
+                {true,false,false,false,false},
+                {true,true,false,false,false},
+            };
+        System.out.println ("Checking method cntTrueReg with the matrix:\n");
+        printMat (mat);
+        int studentCntRegResult=Ex13.cntTrueReg(mat);
+        System.out.println();
+        System.out.println("Result is: "+studentCntRegResult);
 
     }
 
